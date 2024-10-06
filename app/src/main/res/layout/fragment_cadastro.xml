@@ -6,224 +6,206 @@
     android:layout_height="match_parent"
     tools:context=".CadastroFragment">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <ImageView
         android:id="@+id/logo"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
-        android:background="@drawable/dc"
+        android:layout_marginBottom="25dp"
+        android:src="@drawable/dc"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/card"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="-12dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
 
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/gotham_black"
+                android:gravity="center_horizontal"
+                android:text="Registre um personagem do mundo da DC"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/personagemEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Personagem:"
-                    android:textColor="@color/dc_gray_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/personagemEscrita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Personagem:"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp" />
 
-                <EditText
-                    android:id="@+id/personagem"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Personagem"
-                    android:imeOptions="actionDone"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/nomeRealEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Nome verdadeiro do personagem:"
-                    android:textColor="@color/dc_gray_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/nome"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Nome verdadeiro do personagem"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/hvEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Herói ou Vilão:"
-                    android:textColor="@color/dc_gray_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+            <EditText
+                android:id="@+id/personagem"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/caixa_edittxt"
+                android:drawablePadding="8dp"
+                android:hint="Nome do Personagem"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="16sp" />
 
 
-                <EditText
-                    android:id="@+id/hv"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Héroi ou Vilão"
-                    android:imeOptions="actionDone"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp" />
+            <TextView
+                android:id="@+id/nomeRealEscrita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Nome verdadeiro do personagem:"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/caixa_edittxt"
+                android:drawablePadding="8dp"
+                android:hint="Nome verdadeiro"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="8dp"
+
+                android:textSize="16sp" />
 
 
-                <TextView
-                    android:id="@+id/poderesEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Poder do personagem:"
-                    android:textColor="@color/dc_gray_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/hvEscrita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Herói, Vilão ou Anti-Héroi:"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp" />
 
-                <EditText
-                    android:id="@+id/poderes"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Poder do personagem"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:padding="8dp" />
+            <EditText
+                android:id="@+id/hv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/caixa_edittxt"
+                android:drawablePadding="8dp"
+                android:hint="Herói, Vilão ou Anti-Héroi"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/motivacaoEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Motivação do personagem:"
-                    android:textColor="@color/dc_gray_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/poderesEscrita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Poderes do personagem:"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp" />
 
+            <EditText
+                android:id="@+id/poderes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/caixa_edittxt"
+                android:drawablePadding="8dp"
+                android:hint="Poderes"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="8dp"
 
-                <EditText
-                    android:id="@+id/motivacao"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Motivação do personagem"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:padding="8dp" />
+                android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/motivacaoEscrita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Motivação do personagem:"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp" />
 
+            <EditText
+                android:id="@+id/motivacao"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/caixa_edittxt"
+                android:drawablePadding="8dp"
+                android:hint="Motivação"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="8dp"
 
-                <TextView
-                    android:id="@+id/curiosidadeEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Curiosidade do personagem:"
-                    android:textColor="@color/dc_gray_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/curiosidadeEscrita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Curiosidade do personagem:"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp" />
 
-                <EditText
-                    android:id="@+id/curiosidade"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Curiosidade do personagem"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:padding="8dp" />
+            <EditText
+                android:id="@+id/curiosidade"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/caixa_edittxt"
+                android:drawablePadding="8dp"
+                android:hint="Curiosidade"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="16sp" />
 
+            <Button
+                android:id="@+id/botaoCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/dc_blue"
+                android:text="Registrar"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:cornerRadius="20dp" />
 
-
-                <Button
-                    android:id="@+id/botaoCadastro"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginBottom="50dp"
-                    android:backgroundTint="@color/dc_blue"
-                    android:text="Registrar"
-                    android:textSize="18sp"
-                    android:visibility="visible"
-                    app:cornerRadius="20dp" />
-
-
-            </LinearLayout>
-        </ScrollView>
-
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
