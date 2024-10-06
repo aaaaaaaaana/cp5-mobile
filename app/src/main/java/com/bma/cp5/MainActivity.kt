@@ -2,13 +2,14 @@ package com.bma.cp5
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnCadastro:Button
-    private lateinit var btnLogin:Button
+    private lateinit var btnCadastro: ImageView
+    private lateinit var btnLogin: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnCadastro = findViewById(R.id.btnCadastro)
-        btnLogin = findViewById(R.id.btnLogin)
+        btnLogin = findViewById(R.id.btnLista)
 
-        btnCadastro.setOnClickListener{
+        btnCadastro.setOnClickListener {
             val cadastroFragment = CadastroFragment()
 
             val bundle = bundleOf(
@@ -28,17 +29,15 @@ class MainActivity : AppCompatActivity() {
             cadastroFragment.arguments = bundle
 
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,cadastroFragment)
+                .replace(R.id.fragmentContainerView, cadastroFragment)
                 .commit()
         }
 
-        btnLogin.setOnClickListener{
+        btnLogin.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,ListaFragment())
+                .replace(R.id.fragmentContainerView, ListaFragment())
                 .commit()
         }
-
-
 
 
     }

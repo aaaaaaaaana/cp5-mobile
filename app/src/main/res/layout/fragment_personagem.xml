@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:padding="16dp"
+    tools:context=".PersonagemFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageViewPersonagem"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/batman" />
+
+            <TextView
+                android:id="@+id/nomePersonagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Nome do Personagem"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nomeReal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Nome Verdadeiro: "
+                android:textColor="@color/dc_gray_light"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/heroiVilao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Herói/Vilão: "
+                android:textColor="@color/dc_gray_light"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/poderes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Poderes: "
+                android:textColor="@color/dc_gray_light"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/motivacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Motivação: "
+                android:textColor="@color/dc_gray_light"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/curiosidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Curiosidade: "
+                android:textColor="@color/dc_gray_light"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnAtualizar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/dc_blue"
+                    android:src="@drawable/atualizar"
+                    android:text="Atualizar"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/btnDeletar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:backgroundTint="@color/dc_blue"
+                    android:src="@drawable/apagar"
+                    android:text="Deletar"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
