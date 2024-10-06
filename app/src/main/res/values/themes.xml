@@ -1,8 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Cp5" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/dc_blue</item>
+        <item name="colorPrimaryVariant">@color/dc_gray_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/dc_yellow</item>
+        <item name="colorSecondaryVariant">@color/dc_yellow</item>
+        <item name="colorOnSecondary">@color/dc_gray_dark</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/dc_gray_light</item>
     </style>
 
     <style name="Theme.Cp5" parent="Base.Theme.Cp5" />

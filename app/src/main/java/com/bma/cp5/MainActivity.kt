@@ -21,19 +21,8 @@ class MainActivity : AppCompatActivity() {
         btnLista = findViewById(R.id.btnLogin)
 
         btnCadastro.setOnClickListener{
-            val cadastroFragment = CadastroFragment()
-
-            val bundle = bundleOf(
-                "nome" to "Ana",
-                "idade" to "19",
-                "email" to "ana@gmail.com",
-                "senha" to "moranguinho",
-                "confirmarSenha" to "ana@gmail.com"
-            )
-            cadastroFragment.arguments = bundle
-
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,cadastroFragment)
+                .replace(R.id.fragmentContainerView,CadastroFragment)
                 .commit()
         }
 
