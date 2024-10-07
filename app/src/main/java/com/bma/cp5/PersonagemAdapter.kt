@@ -26,6 +26,7 @@ class PersonagemAdapter(
             Glide.with(fotoPersonagem.context)
                 .load(Uri.parse(personagem.foto))
                 .centerCrop()
+                .skipMemoryCache(true)
                 .into(fotoPersonagem)
 
             itemView.setOnClickListener { onItemClickListener(personagem) }
