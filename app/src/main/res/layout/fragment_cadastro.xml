@@ -85,7 +85,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/nome"
+                android:id="@+id/nomeReal"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"

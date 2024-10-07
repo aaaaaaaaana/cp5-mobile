@@ -21,10 +21,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="30dp"
         android:fontFamily="@font/gotham_black"
-        android:text="CHARACTERS"
-        android:textColor="@color/white"
+        android:text="PERSONAGENS"
+        android:textColor="@color/dc_gray_light"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -47,9 +47,12 @@
                 android:padding="5dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_weight="1">
 
                     <LinearLayout
@@ -62,6 +65,7 @@
                         android:padding="6dp">
 
                         <TextView
+                            android:id="@+id/nomePersonagem1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -89,10 +93,13 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:layout_weight="1">
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:focusable="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -102,6 +109,8 @@
                         android:padding="6dp">
 
                         <TextView
+                            android:id="@+id/nomePersonagem2"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -113,7 +122,7 @@
 
                         <ImageView
                             android:id="@+id/imageViewPersonagem2"
-                            android:layout_width="150dp"
+                            android:layout_width="160dp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginHorizontal="50dp"
@@ -133,9 +142,13 @@
                 android:padding="6dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView3"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_weight="1">
 
                     <LinearLayout
@@ -146,6 +159,8 @@
                         android:padding="10dp">
 
                         <TextView
+                            android:id="@+id/nomePersonagem3"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -157,7 +172,7 @@
 
                         <ImageView
                             android:id="@+id/imageViewPersonagem3"
-                            android:layout_width="150dp"
+                            android:layout_width="160dp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginHorizontal="50dp"
@@ -169,9 +184,13 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView4"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_weight="1">
 
                     <LinearLayout
@@ -183,6 +202,8 @@
                         android:padding="6dp">
 
                         <TextView
+                            android:id="@+id/nomePersonagem4"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -194,7 +215,7 @@
 
                         <ImageView
                             android:id="@+id/imageViewPersonagem4"
-                            android:layout_width="150dp"
+                            android:layout_width="160dp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginHorizontal="50dp"
@@ -214,9 +235,13 @@
                 android:padding="8dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView5"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_weight="1">
 
                     <LinearLayout
@@ -228,6 +253,8 @@
                         android:padding="6dp">
 
                         <TextView
+                            android:id="@+id/nomePersonagem5"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -239,7 +266,7 @@
 
                         <ImageView
                             android:id="@+id/imageViewPersonagem5"
-                            android:layout_width="150dp"
+                            android:layout_width="160dp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginHorizontal="50dp"
@@ -251,9 +278,12 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_weight="1">
 
                     <LinearLayout
@@ -265,6 +295,8 @@
                         android:padding="6dp">
 
                         <TextView
+                            android:id="@+id/nomePersonagem6"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -276,7 +308,7 @@
 
                         <ImageView
                             android:id="@+id/imageViewPersonagem6"
-                            android:layout_width="150dp"
+                            android:layout_width="160dp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginHorizontal="50dp"

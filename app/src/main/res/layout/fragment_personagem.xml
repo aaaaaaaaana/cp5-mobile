@@ -41,7 +41,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/gotham_black"
-                android:text="Nome do Personagem"
+                android:text="@string/nome_do_personagem"
                 android:textColor="@color/dc_gray_light"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/gotham_black"
-                android:text="Nome Verdadeiro: "
+                android:text="@string/nome_verdadeiro"
                 android:textColor="@color/dc_gray_light"
                 android:textSize="14sp" />
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/gotham_black"
-                android:text="Herói/Vilão: "
+                android:text="@string/her_i_vil_o"
                 android:textColor="@color/dc_gray_light"
                 android:textSize="14sp" />
 
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/gotham_black"
-                android:text="Poderes: "
+                android:text="@string/poderes"
                 android:textColor="@color/dc_gray_light"
                 android:textSize="14sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/gotham_black"
-                android:text="Motivação: "
+                android:text="@string/motiva_o"
                 android:textColor="@color/dc_gray_light"
                 android:textSize="14sp" />
 
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/gotham_black"
-                android:text="Curiosidade: "
+                android:text="@string/curiosidade"
                 android:textColor="@color/dc_gray_light"
                 android:textSize="14sp" />
 
@@ -102,29 +102,27 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
-                <Button
+                <ImageView
                     android:id="@+id/btnAtualizar"
-                    android:layout_width="30dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginHorizontal="30dp"
                     android:layout_marginEnd="16dp"
-                    android:background="@drawable/atualizar"
-                    android:text=""
-                    android:textSize="14sp"
-                    android:scaleType="centerInside"/>
+                    android:backgroundTint="@color/dc_blue"
+                    android:src="@drawable/atualizar"
+                    android:text="Atualizar"
+                    android:textSize="14sp" />
 
-                <Button
+                <ImageView
                     android:id="@+id/btnDeletar"
-                    android:layout_width="30dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:layout_marginLeft="60dp"
-                    android:background="@drawable/apagar"
-                    android:text=""
-                    android:textSize="14sp"
-                    android:scaleType="centerInside"/>
+                    android:backgroundTint="@color/dc_blue"
+                    android:src="@drawable/apagar"
+                    android:text="Deletar"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 

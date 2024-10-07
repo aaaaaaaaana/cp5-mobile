@@ -2,4 +2,10 @@
     <string name="app_name">cp5</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nome_do_personagem">Nome do Personagem</string>
+    <string name="nome_verdadeiro">Nome Verdadeiro:</string>
+    <string name="her_i_vil_o">Herói/Vilão:</string>
+    <string name="poderes">Poderes:</string>
+    <string name="motiva_o">Motivação:</string>
+    <string name="curiosidade">Curiosidade:</string>
 </resources>

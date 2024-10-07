@@ -8,8 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnCadastro: Button
-    private lateinit var btnLista: Button
+
+    private lateinit var btnCadastro: ImageView
+    private lateinit var btnLista: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,4 +32,6 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
     }
+
+
 }
