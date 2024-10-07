@@ -31,7 +31,10 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.fragmentContainerView, ListaFragment())
                 .commit()
         }
+
+
     }
+
 
 
 }

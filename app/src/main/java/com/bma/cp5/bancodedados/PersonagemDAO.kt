@@ -91,18 +91,14 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
             if (cursor.moveToFirst()) {
                 do {
                     val id = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.COLUMN_ID))
-                    val personagem =
-                        cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_PERSONAGEM))
-                    val nome = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_NOME))
+                    val nome = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_PERSONAGEM))
+                    val nomeReal = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_NOME))
                     val hv = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_HV))
-                    val poderes =
-                        cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_PODERES))
-                    val motivacao =
-                        cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_MOTIVACAO))
-                    val curiosidade =
-                        cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_CURIOSIDADE))
+                    val poderes = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_PODERES))
+                    val motivacao = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_MOTIVACAO))
+                    val curiosidade = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_CURIOSIDADE))
 
-                    val p = Personagem(id, personagem, nome, hv, poderes, motivacao, curiosidade)
+                    val p = Personagem(id, nome, nomeReal, hv, poderes, motivacao, curiosidade)
                     personagens.add(p)
                 } while (cursor.moveToNext())
             }
@@ -116,5 +112,7 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
         } finally {
             db.close()
         }
+
     }
+
 }
