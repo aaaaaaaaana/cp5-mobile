@@ -42,7 +42,11 @@ android {
 }
 
 dependencies {
+    val activity_version = "1.9.2"
 
+
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

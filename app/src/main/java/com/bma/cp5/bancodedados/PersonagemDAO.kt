@@ -61,13 +61,14 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
         }
     }
 
-    override fun remover(personagem: String): Boolean {
+
+    override fun remover(id: Int): Boolean {
         val db = dbHelper.writableDatabase
 
         try {
             db.delete(
-                DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_PERSONAGEM + " = ?",
-                arrayOf(personagem)
+                DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_ID + " = ?",
+                arrayOf(id.toString())
             )
             Log.i("db_info", "Personagem removido")
             return true
@@ -112,7 +113,5 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
         } finally {
             db.close()
         }
-
     }
-
 }

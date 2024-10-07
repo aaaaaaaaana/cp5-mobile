@@ -11,8 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.ViewModelProvider
 import com.bma.cp5.bancodedados.PersonagemDAO
 import com.bma.cp5.model.Personagem
 
@@ -27,7 +26,7 @@ class PersonagemFragment : Fragment() {
     private lateinit var btnAtualizar: ImageView
     private lateinit var btnDeletar: ImageView
     private lateinit var personagemDAO: PersonagemDAO
-    private val sharedViewModel: ListaFragmentViewModel by activityViewModels()
+    private lateinit var sharedViewModel: ListaFragmentViewModel
 
     companion object {
         const val ARG_PERSONAGEM = "personagem"
@@ -56,8 +55,10 @@ class PersonagemFragment : Fragment() {
         btnAtualizar = view.findViewById(R.id.btnAtualizar)
         btnDeletar = view.findViewById(R.id.btnDeletar)
 
-
         personagemDAO = PersonagemDAO(requireContext())
+
+        // Inicializar o sharedViewModel aqui
+        sharedViewModel = ViewModelProvider(requireActivity()).get(ListaFragmentViewModel::class.java)
 
         val personagem = arguments?.getParcelable<Personagem>(ARG_PERSONAGEM)
 
@@ -72,7 +73,6 @@ class PersonagemFragment : Fragment() {
 
 
         btnAtualizar.setOnClickListener {
-
             val nome = nomePersonagem.text.toString()
             val nomeReal = nomeRealTextView.text.toString()
             val hv = heroiVilaoTextView.text.toString()
@@ -97,13 +97,13 @@ class PersonagemFragment : Fragment() {
         }
 
         btnDeletar.setOnClickListener {
-
-            if (personagemDAO.remover(personagem.nome)) {
-                Toast.makeText(requireContext(), "Personagem deletado com sucesso!", Toast.LENGTH_SHORT).show()
-                sharedViewModel.atualizarLista()
-
-            } else {
-                Toast.makeText(requireContext(), "Erro ao deletar personagem.", Toast.LENGTH_SHORT).show()
+            if (personagem != null) {
+                if (personagemDAO.remover(personagem.id)) {
+                    Toast.makeText(requireContext(), "Personagem deletado com sucesso!", Toast.LENGTH_SHORT).show()
+                    sharedViewModel.atualizarLista()
+                } else {
+                    Toast.makeText(requireContext(), "Erro ao deletar personagem.", Toast.LENGTH_SHORT).show()
+                }
             }
         }
         return view
