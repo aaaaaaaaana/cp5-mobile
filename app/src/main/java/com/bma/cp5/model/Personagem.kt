@@ -15,5 +15,5 @@ data class Personagem(
     val poderes: String,
     val motivacao: String,
     val curiosidade: String,
-    val foto: String
-) : Parcelable, Serializable
+    val foto: String?
+) : Parcelable
