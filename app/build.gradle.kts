@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    val activity_version = "1.9.2"
+
 
 
     implementation(libs.androidx.activity)
@@ -62,6 +62,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.glide)
+    annotationProcessor(libs.glide)
 
 
 

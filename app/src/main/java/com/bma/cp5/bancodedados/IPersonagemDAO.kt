@@ -7,4 +7,5 @@ interface IPersonagemDAO {
     fun atualizar(personagem: Personagem): Boolean
     fun remover(id: Int): Boolean
     fun listar(): List<Personagem>
+    fun inserir(personagem: Personagem): Boolean
 }

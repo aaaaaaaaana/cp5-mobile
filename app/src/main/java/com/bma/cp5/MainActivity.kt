@@ -6,6 +6,7 @@ import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,21 +21,28 @@ class MainActivity : AppCompatActivity() {
         btnCadastro = findViewById(R.id.btnCadastro)
         btnLista = findViewById(R.id.btnLista)
 
+
+        showFragment(ListaFragment())
+
         btnCadastro.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView, CadastroFragment())
-                .commit()
+            showFragment(CadastroFragment())
         }
 
         btnLista.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView, ListaFragment())
-                .commit()
+            showFragment(ListaFragment())
         }
-
-
     }
 
 
+    fun showFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView, fragment)
+            .commit()
+    }
 
+    fun atualizarLista() {
+
+        val listaFragment = supportFragmentManager.findFragmentByTag("ListaFragment") as? ListaFragment
+        listaFragment?.atualizarLista()
+    }
 }

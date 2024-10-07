@@ -26,19 +26,14 @@ class ListaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         personagemDAO = PersonagemDAO(requireContext())
-
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         adapter = PersonagemAdapter(emptyList()) { personagem ->
 
-            childFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerPersonagem, PersonagemFragment.newInstance(personagem))
-                .commit()
+            (activity as? MainActivity)?.showFragment(PersonagemFragment.newInstance(personagem))
         }
         binding.recyclerView.adapter = adapter
-
 
         loadPersonagens()
     }
@@ -46,5 +41,18 @@ class ListaFragment : Fragment() {
     private fun loadPersonagens() {
         val personagens = personagemDAO.listar()
         adapter.updatePersonagens(personagens)
+    }
+
+    fun adicionarPersonagem(novoPersonagem: Personagem) {
+        personagemDAO.inserir(novoPersonagem)
+        val personagensAtualizados = personagemDAO.listar()
+        adapter.updatePersonagens(personagensAtualizados)
+        adapter.notifyItemInserted(personagensAtualizados.size - 1)
+    }
+
+
+    fun atualizarLista() {
+        loadPersonagens()
+        adapter.notifyDataSetChanged()
     }
 }

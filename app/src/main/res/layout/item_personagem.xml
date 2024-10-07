@@ -25,14 +25,13 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageViewPersonagem"
+            android:id="@+id/fotoPersonagem"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/batman" />
-
+            android:contentDescription="Foto do Personagem" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

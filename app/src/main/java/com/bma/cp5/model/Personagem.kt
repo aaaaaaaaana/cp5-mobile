@@ -1,7 +1,9 @@
 package com.bma.cp5.model
 
+import android.media.Image
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
+import java.io.Serializable
 
 
 @Parcelize
@@ -12,5 +14,6 @@ data class Personagem(
     val hv: String,
     val poderes: String,
     val motivacao: String,
-    val curiosidade: String
-) : Parcelable
+    val curiosidade: String,
+    val foto: String
+) : Parcelable, Serializable

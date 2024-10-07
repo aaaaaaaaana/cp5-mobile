@@ -73,6 +73,36 @@
                 android:padding="8dp"
                 android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/fotoEscrita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/gotham_black"
+                android:text="Foto do Personagem:"
+                android:textColor="@color/dc_gray_light"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/fotoPersonagem"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="Foto do Personagem"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fotoEscrita" />
+
+            <Button
+                android:id="@+id/selecionarFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Selecionar Foto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fotoPersonagem" />
 
             <TextView
                 android:id="@+id/nomeRealEscrita"
@@ -95,7 +125,6 @@
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:padding="8dp"
-
                 android:textSize="16sp" />
 
 
@@ -143,7 +172,6 @@
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:padding="8dp"
-
                 android:textSize="16sp" />
 
             <TextView
@@ -167,7 +195,6 @@
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:padding="8dp"
-
                 android:textSize="16sp" />
 
             <TextView

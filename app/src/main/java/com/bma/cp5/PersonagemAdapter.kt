@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bma.cp5.model.Personagem
+import com.bumptech.glide.Glide
 
 class PersonagemAdapter(
     private var personagens: List<Personagem>,
@@ -14,13 +15,17 @@ class PersonagemAdapter(
 ) : RecyclerView.Adapter<PersonagemAdapter.PersonagemViewHolder>() {
 
     class PersonagemViewHolder(itemView: View, private val onItemClickListener: (Personagem) -> Unit) : RecyclerView.ViewHolder(itemView) {
-        private val nomePersonagem: TextView = itemView.findViewById(R.id.nomePersonagem)
-        private val imageViewPersonagem: ImageView = itemView.findViewById(R.id.imageViewPersonagem)
+        val nomePersonagem: TextView = itemView.findViewById(R.id.nomePersonagem)
+        val fotoPersonagem: ImageView = itemView.findViewById(R.id.fotoPersonagem)
 
         fun bind(personagem: Personagem) {
             nomePersonagem.text = personagem.nome
 
-            imageViewPersonagem.setImageResource(R.drawable.batman)
+            // Load the image using Glide
+            Glide.with(itemView.context)
+                .load(personagem.foto)
+                .into(fotoPersonagem)
+
             itemView.setOnClickListener { onItemClickListener(personagem) }
         }
     }

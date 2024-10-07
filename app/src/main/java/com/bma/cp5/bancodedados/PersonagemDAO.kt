@@ -8,19 +8,19 @@ import com.bma.cp5.model.Personagem
 import java.lang.Exception
 
 class PersonagemDAO(context: Context) : IPersonagemDAO {
-    private val dbHelper = DatabaseHelper(context)
+    private val dbHelper = DatabaseHelper.getInstance(context)
 
     override fun salvar(personagem: Personagem): Boolean {
         val db = dbHelper.writableDatabase
         val values = ContentValues()
 
-        values.put(DatabaseHelper.COLUMN_ID, personagem.id)
         values.put(DatabaseHelper.COLUMN_PERSONAGEM, personagem.nome)
         values.put(DatabaseHelper.COLUMN_NOME, personagem.nomeReal)
         values.put(DatabaseHelper.COLUMN_HV, personagem.hv)
         values.put(DatabaseHelper.COLUMN_PODERES, personagem.poderes)
         values.put(DatabaseHelper.COLUMN_MOTIVACAO, personagem.motivacao)
         values.put(DatabaseHelper.COLUMN_CURIOSIDADE, personagem.curiosidade)
+        values.put(DatabaseHelper.COLUMN_FOTO, personagem.foto) // Adiciona a coluna FOTO
 
         try {
             db.insert(DatabaseHelper.TABLE_NAME, null, values)
@@ -44,6 +44,7 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
         values.put(DatabaseHelper.COLUMN_PODERES, personagem.poderes)
         values.put(DatabaseHelper.COLUMN_MOTIVACAO, personagem.motivacao)
         values.put(DatabaseHelper.COLUMN_CURIOSIDADE, personagem.curiosidade)
+        values.put(DatabaseHelper.COLUMN_FOTO, personagem.foto)
 
         try {
             db.update(
@@ -61,13 +62,13 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
         }
     }
 
-
     override fun remover(id: Int): Boolean {
         val db = dbHelper.writableDatabase
 
         try {
             db.delete(
-                DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_ID + " = ?",
+                DatabaseHelper.TABLE_NAME,
+                DatabaseHelper.COLUMN_ID + " = ?",
                 arrayOf(id.toString())
             )
             Log.i("db_info", "Personagem removido")
@@ -98,8 +99,9 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
                     val poderes = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_PODERES))
                     val motivacao = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_MOTIVACAO))
                     val curiosidade = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_CURIOSIDADE))
+                    val foto = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_FOTO))
 
-                    val p = Personagem(id, nome, nomeReal, hv, poderes, motivacao, curiosidade)
+                    val p = Personagem(id, nome, nomeReal, hv, poderes, motivacao, curiosidade, foto)
                     personagens.add(p)
                 } while (cursor.moveToNext())
             }
@@ -114,4 +116,9 @@ class PersonagemDAO(context: Context) : IPersonagemDAO {
             db.close()
         }
     }
+
+    override fun inserir(personagem: Personagem): Boolean {
+        return salvar(personagem)
+    }
+
 }
