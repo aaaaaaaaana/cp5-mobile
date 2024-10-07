@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bma.cp5.model.Personagem
 import com.bumptech.glide.Glide
+import android.net.Uri
 
 class PersonagemAdapter(
     private var personagens: List<Personagem>,
@@ -21,9 +22,10 @@ class PersonagemAdapter(
         fun bind(personagem: Personagem) {
             nomePersonagem.text = personagem.nome
 
-            // Load the image using Glide
-            Glide.with(itemView.context)
-                .load(personagem.foto)
+
+            Glide.with(fotoPersonagem.context)
+                .load(Uri.parse(personagem.foto))
+                .centerCrop()
                 .into(fotoPersonagem)
 
             itemView.setOnClickListener { onItemClickListener(personagem) }

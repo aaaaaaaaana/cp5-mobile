@@ -14,6 +14,9 @@ import androidx.fragment.app.Fragment
 import com.bma.cp5.bancodedados.PersonagemDAO
 import com.bma.cp5.databinding.FragmentCadastroBinding
 import com.bma.cp5.model.Personagem
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 class CadastroFragment : Fragment() {
     private lateinit var binding: FragmentCadastroBinding
@@ -39,6 +42,7 @@ class CadastroFragment : Fragment() {
                 val data = result.data
                 if (data != null) {
                     val imageUri = data.data
+
                     binding.fotoPersonagem.setImageURI(imageUri)
                 }
             }
@@ -63,7 +67,11 @@ class CadastroFragment : Fragment() {
                 it.toString()
             }
 
-            if (imageUri != null) {
+            val contentUri = binding.fotoPersonagem.drawable.current?.let {
+                it.toString()
+            }
+
+            if (contentUri != null) {
                 val novoPersonagem = Personagem(
                     nome = nome,
                     nomeReal = nomeReal,
@@ -71,7 +79,7 @@ class CadastroFragment : Fragment() {
                     poderes = poderes,
                     motivacao = motivacao,
                     curiosidade = curiosidade,
-                    foto = imageUri
+                    foto = contentUri
                 )
 
                 if (personagemDAO.salvar(novoPersonagem)) {
@@ -108,5 +116,22 @@ class CadastroFragment : Fragment() {
         binding.motivacao.setText("")
         binding.curiosidade.setText("")
         binding.fotoPersonagem.setImageResource(android.R.color.transparent)
+    }
+
+
+    private fun createTempFile(prefix: String, suffix: String): File {
+        return File.createTempFile(prefix, suffix, requireContext().cacheDir)
+    }
+
+    private fun copyImageToFile(imageUri: Uri, tempFile: File) {
+        try {
+            requireContext().contentResolver.openInputStream(imageUri)?.use { inputStream ->
+                FileOutputStream(tempFile).use { outputStream ->
+                    inputStream.copyTo(outputStream)
+                }
+            }
+        } catch (e: IOException) {
+            Toast.makeText(requireContext(), "Erro ao copiar a imagem", Toast.LENGTH_SHORT).show()
+        }
     }
 }
