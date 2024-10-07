@@ -23,6 +23,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginHorizontal="50dp"
             android:layout_marginTop="10dp"
+            tools:srcCompat="@tools:sample/avatars"
             android:contentDescription="Foto do Personagem"
             android:scaleType="centerCrop" />
 
